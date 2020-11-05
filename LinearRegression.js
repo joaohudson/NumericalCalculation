@@ -7,6 +7,7 @@ function dot(x, y){
     return sum;
 }
 
+//linear regression
 function lr(x, y){
 	if(x.length != y.length)
 		return undefined;
@@ -35,6 +36,6 @@ function lr(x, y){
 }
 
 x = [1, 2, 3];
-y = [1, 2, 3];
+y = [1 * 8 + 3, 2 * 8 + 3, 3 * 8 + 3];
 
 lr(x, y)
