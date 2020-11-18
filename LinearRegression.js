@@ -16,6 +16,35 @@ function scale(x, y){
     return s;
 }
 
+function average(ar){
+	let sum = 0;
+	for(let i = 0; i < ar.length; i++){
+		sum += ar[i];
+	}
+	return sum / ar.length;
+}
+
+function variance(ar){
+	let sum = 0;
+	const av = average(ar);
+	for(let i = 0; i < ar.length; i++){
+		sum += (ar[i] - av)**2;
+	}
+	return sum;
+}
+
+//determination coefficient
+function dc(x, y, f){
+	let error = 0;
+	const vari = variance(y);
+	
+	for(let i = 0; i < y.length; i++){
+		error += (y[i] - f(x[i]))**2;
+	}
+	
+	return (vari - error) / vari;
+}
+
 //linear regression
 function lr(x, y){
 	if(x.length != y.length)
